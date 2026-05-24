@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Base Light High-Density body override with HSBC signature palette */
+body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #F8F9FA;
+  color: #1A1A1A;
+}
+
+/* Beautiful canvas hexagonal or dual-grid background grid for HSBC corporate */
+.canvas-grid, .dot-grid {
+  background-image: radial-gradient(#D1D5DB 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* High Density node cards - sharp geometric borders matching HSBC design philosophy */
+.node-card {
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-top: 3px solid #1A1A1A; /* solid top accent border */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-radius: 2px; /* crisp sharp corporate corners */
+  transition: all 0.15s ease-in-out;
+}
+.node-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  border-color: #DB1E26; /* hover shifts to HSBC Red */
+}
+
+.node-active {
+  border: 1.5px solid #DB1E26 !important;
+  border-top: 3px solid #DB1E26 !important;
+  box-shadow: 0 0 0 3px rgba(219,30,38,0.12) !important;
+}
+
+.ai-node {
+  border-left: 3px solid #DB1E26 !important;
+  border-top: 3px solid #DB1E26 !important;
+}
+
+/* Sidebar and properties panels */
+.sidebar-panel {
+  background: white;
+  border-right: 1px solid #E5E7EB;
+}
+
+.props-panel {
+  background: white;
+  border-left: 1px solid #E5E7EB;
+}
+
+/* Glowing pulse for active workflow elements in HSBC brand red */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(219, 30, 38, 0.3);
+    border-color: rgba(219, 30, 38, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 10px 4px rgba(219, 30, 38, 0.15);
+    border-color: rgba(219, 30, 38, 1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(219, 30, 38, 0.3);
+    border-color: rgba(219, 30, 38, 0.6);
+  }
+}
+
+.active-glow {
+  animation: glowPulse 2s infinite ease-in-out;
+}
+
+@keyframes aiPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(26, 26, 26, 0.2);
+    border-color: rgba(26, 26, 26, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 12px 6px rgba(26, 26, 26, 0.1);
+    border-color: rgba(26, 26, 26, 1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(26, 26, 26, 0.2);
+    border-color: rgba(26, 26, 26, 0.6);
+  }
+}
+
+.ai-glow {
+  animation: aiPulse 1.5s infinite ease-in-out;
+}
+
+svg .pulse-line {
+  stroke-dasharray: 6, 6;
+  animation: dash 35s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+

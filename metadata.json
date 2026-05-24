@@ -1,0 +1,6 @@
+{
+  "name": "Workflow Designer & AI Agent Simulation",
+  "description": "An interactive canvas to build workflow diagrams with Tasks, Decisions, AI Agents, and Role Handoffs. Features role impersonation, real-time in-app notifications, and a server-side Gemini AI engine acting as the router and orchestrator that parses workflows and automates triage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
